@@ -125,14 +125,14 @@ def init_log():
     _lvl = "DEBUG"
 
     def format_record(record):
-        # 获取日志记录中的文件全路径
+        # 獲取日誌記錄中的檔全路徑
         file_path = record["file"].path
-        # 将绝对路径转换为相对于项目根目录的路径
+        # 將絕對路徑轉換為相對於專案根目錄的路徑
         relative_path = os.path.relpath(file_path, root_dir)
-        # 更新记录中的文件路径
+        # 更新記錄中的檔路徑
         record["file"].path = f"./{relative_path}"
-        # 返回修改后的格式字符串
-        # 您可以根据需要调整这里的格式
+        # 返回修改後的格式字串
+        # 您可以根據需要調整這裡的格式
         record["message"] = record["message"].replace(root_dir, ".")
 
         _format = (
@@ -188,7 +188,7 @@ if not config.app.get("hide_config", False):
                 st.session_state["ui_language"] = code
                 config.ui["language"] = code
 
-            # 是否禁用日志显示
+            # 是否禁用日誌顯示
             hide_log = st.checkbox(
                 tr("Hide Log"), value=config.app.get("hide_log", False)
             )
@@ -200,7 +200,7 @@ if not config.app.get("hide_config", False):
             #   oneapi
             #   g4f
             #   azure
-            #   qwen (通义千问)
+            #   qwen (通義千問)
             #   gemini
             #   ollama
             llm_providers = [
@@ -249,11 +249,11 @@ if not config.app.get("hide_config", False):
 
                 with llm_helper:
                     tips = """
-                           ##### Ollama配置说明
-                           - **API Key**: 随便填写，比如 123
-                           - **Base Url**: 一般为 http://localhost:11434/v1
-                              - 如果 `MoneyPrinterTurbo` 和 `Ollama` **不在同一台机器上**，需要填写 `Ollama` 机器的IP地址
-                              - 如果 `MoneyPrinterTurbo` 是 `Docker` 部署，建议填写 `http://host.docker.internal:11434/v1`
+                           ##### Ollama配置說明
+                           - **API Key**: 隨便填寫，比如 123
+                           - **Base Url**: 一般為 http://localhost:11434/v1
+                              - 如果 `MoneyPrinterTurbo` 和 `Ollama` **不在同一台機器上**，需要填寫 `Ollama` 機器的IP位址
+                              - 如果 `MoneyPrinterTurbo` 是 `Docker` 部署，建議填寫 `http://host.docker.internal:11434/v1`
                            - **Model Name**: 使用 `ollama list` 查看，比如 `qwen:7b`
                            """
 
@@ -262,11 +262,11 @@ if not config.app.get("hide_config", False):
                     llm_model_name = "gpt-3.5-turbo"
                 with llm_helper:
                     tips = """
-                           ##### OpenAI 配置说明
-                           > 需要VPN开启全局流量模式
-                           - **API Key**: [点击到官网申请](https://platform.openai.com/api-keys)
+                           ##### OpenAI 配置說明
+                           > 需要VPN開啟全域流量模式
+                           - **API Key**: [點擊到官網申請](https://platform.openai.com/api-keys)
                            - **Base Url**: 可以留空
-                           - **Model Name**: 填写**有权限**的模型，[点击查看模型列表](https://platform.openai.com/settings/organization/limits)
+                           - **Model Name**: 填寫**有許可權**的模型，[點擊查看模型清單](https://platform.openai.com/settings/organization/limits)
                            """
 
             if llm_provider == "moonshot":
@@ -274,22 +274,22 @@ if not config.app.get("hide_config", False):
                     llm_model_name = "moonshot-v1-8k"
                 with llm_helper:
                     tips = """
-                           ##### Moonshot 配置说明
-                           - **API Key**: [点击到官网申请](https://platform.moonshot.cn/console/api-keys)
-                           - **Base Url**: 固定为 https://api.moonshot.cn/v1
-                           - **Model Name**: 比如 moonshot-v1-8k，[点击查看模型列表](https://platform.moonshot.cn/docs/intro#%E6%A8%A1%E5%9E%8B%E5%88%97%E8%A1%A8)
+                           ##### Moonshot 配置說明
+                           - **API Key**: [點擊到官網申請](https://platform.moonshot.cn/console/api-keys)
+                           - **Base Url**: 固定為 https://api.moonshot.cn/v1
+                           - **Model Name**: 比如 moonshot-v1-8k，[點擊查看模型清單](https://platform.moonshot.cn/docs/intro#%E6%A8%A1%E5%9E%8B%E5%88%97%E8%A1%A8)
                            """
             if llm_provider == "oneapi":
                 if not llm_model_name:
                     llm_model_name = (
-                        "claude-3-5-sonnet-20240620"  # 默认模型，可以根据需要调整
+                        "claude-3-5-sonnet-20240620"  # 預設模型，可以根據需要調整
                     )
                 with llm_helper:
                     tips = """
-                        ##### OneAPI 配置说明
-                        - **API Key**: 填写您的 OneAPI 密钥
-                        - **Base Url**: 填写 OneAPI 的基础 URL
-                        - **Model Name**: 填写您要使用的模型名称，例如 claude-3-5-sonnet-20240620
+                        ##### OneAPI 配置說明
+                        - **API Key**: 填寫您的 OneAPI 金鑰
+                        - **Base Url**: 填寫 OneAPI 的基礎 URL
+                        - **Model Name**: 填寫您要使用的模型名稱，例如 claude-3-5-sonnet-20240620
                         """
 
             if llm_provider == "qwen":
@@ -297,10 +297,10 @@ if not config.app.get("hide_config", False):
                     llm_model_name = "qwen-max"
                 with llm_helper:
                     tips = """
-                           ##### 通义千问Qwen 配置说明
-                           - **API Key**: [点击到官网申请](https://dashscope.console.aliyun.com/apiKey)
+                           ##### 通義千問Qwen 配置說明
+                           - **API Key**: [點擊到官網申請](https://dashscope.console.aliyun.com/apiKey)
                            - **Base Url**: 留空
-                           - **Model Name**: 比如 qwen-max，[点击查看模型列表](https://help.aliyun.com/zh/dashscope/developer-reference/model-introduction#3ef6d0bcf91wy)
+                           - **Model Name**: 比如 qwen-max，[點擊查看模型清單](https://help.aliyun.com/zh/dashscope/developer-reference/model-introduction#3ef6d0bcf91wy)
                            """
 
             if llm_provider == "g4f":
@@ -308,20 +308,20 @@ if not config.app.get("hide_config", False):
                     llm_model_name = "gpt-3.5-turbo"
                 with llm_helper:
                     tips = """
-                           ##### gpt4free 配置说明
-                           > [GitHub开源项目](https://github.com/xtekky/gpt4free)，可以免费使用GPT模型，但是**稳定性较差**
-                           - **API Key**: 随便填写，比如 123
+                           ##### gpt4free 配置說明
+                           > [GitHub開源項目](https://github.com/xtekky/gpt4free)，可以免費使用GPT模型，但是**穩定性較差**
+                           - **API Key**: 隨便填寫，比如 123
                            - **Base Url**: 留空
-                           - **Model Name**: 比如 gpt-3.5-turbo，[点击查看模型列表](https://github.com/xtekky/gpt4free/blob/main/g4f/models.py#L308)
+                           - **Model Name**: 比如 gpt-3.5-turbo，[點擊查看模型清單](https://github.com/xtekky/gpt4free/blob/main/g4f/models.py#L308)
                            """
             if llm_provider == "azure":
                 with llm_helper:
                     tips = """
-                           ##### Azure 配置说明
-                           > [点击查看如何部署模型](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/how-to/create-resource)
-                           - **API Key**: [点击到Azure后台创建](https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/OpenAI)
+                           ##### Azure 配置說明
+                           > [點擊查看如何部署模型](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/how-to/create-resource)
+                           - **API Key**: [點擊到Azure後臺創建](https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/OpenAI)
                            - **Base Url**: 留空
-                           - **Model Name**: 填写你实际的部署名
+                           - **Model Name**: 填寫你實際的部署名
                            """
 
             if llm_provider == "gemini":
@@ -330,9 +330,9 @@ if not config.app.get("hide_config", False):
 
                 with llm_helper:
                     tips = """
-                            ##### Gemini 配置说明
-                            > 需要VPN开启全局流量模式
-                           - **API Key**: [点击到官网申请](https://ai.google.dev/)
+                            ##### Gemini 配置說明
+                            > 需要VPN開啟全域流量模式
+                           - **API Key**: [點擊到官網申請](https://ai.google.dev/)
                            - **Base Url**: 留空
                            - **Model Name**: 比如 gemini-1.0-pro
                            """
@@ -344,24 +344,24 @@ if not config.app.get("hide_config", False):
                     llm_base_url = "https://api.deepseek.com"
                 with llm_helper:
                     tips = """
-                           ##### DeepSeek 配置说明
-                           - **API Key**: [点击到官网申请](https://platform.deepseek.com/api_keys)
-                           - **Base Url**: 固定为 https://api.deepseek.com
-                           - **Model Name**: 固定为 deepseek-chat
+                           ##### DeepSeek 配置說明
+                           - **API Key**: [點擊到官網申請](https://platform.deepseek.com/api_keys)
+                           - **Base Url**: 固定為 https://api.deepseek.com
+                           - **Model Name**: 固定為 deepseek-chat
                            """
 
             if llm_provider == "ernie":
                 with llm_helper:
                     tips = """
-                           ##### 百度文心一言 配置说明
-                           - **API Key**: [点击到官网申请](https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application)
-                           - **Secret Key**: [点击到官网申请](https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application)
-                           - **Base Url**: 填写 **请求地址** [点击查看文档](https://cloud.baidu.com/doc/WENXINWORKSHOP/s/jlil56u11#%E8%AF%B7%E6%B1%82%E8%AF%B4%E6%98%8E)
+                           ##### 百度文心一言 配置說明
+                           - **API Key**: [點擊到官網申請](https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application)
+                           - **Secret Key**: [點擊到官網申請](https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application)
+                           - **Base Url**: 填寫 **請求位址** [點擊查看文檔](https://cloud.baidu.com/doc/WENXINWORKSHOP/s/jlil56u11#%E8%AF%B7%E6%B1%82%E8%AF%B4%E6%98%8E)
                            """
 
             if tips and config.ui["language"] == "zh":
                 st.warning(
-                    "中国用户建议使用 **DeepSeek** 或 **Moonshot** 作为大模型提供商\n- 国内可直接访问，不需要VPN \n- 注册就送额度，基本够用"
+                    "中國用戶建議使用 **DeepSeek** 或 **Moonshot** 作為大模型提供商\n- 國內可直接訪問，不需要VPN \n- 註冊就送額度，基本夠用"
                 )
                 st.info(tips)
 
@@ -450,8 +450,8 @@ with left_panel:
         selected_index = st.selectbox(
             tr("Script Language"),
             index=0,
-            options=range(len(video_languages)),  # 使用索引作为内部选项值
-            format_func=lambda x: video_languages[x][0],  # 显示给用户的是标签
+            options=range(len(video_languages)),  # 使用索引作為內部選項值
+            format_func=lambda x: video_languages[x][0],  # 顯示給使用者的是標籤
         )
         params.video_language = video_languages[selected_index][1]
 
@@ -523,8 +523,8 @@ with middle_panel:
         selected_index = st.selectbox(
             tr("Video Concat Mode"),
             index=1,
-            options=range(len(video_concat_modes)),  # 使用索引作为内部选项值
-            format_func=lambda x: video_concat_modes[x][0],  # 显示给用户的是标签
+            options=range(len(video_concat_modes)),  # 使用索引作為內部選項值
+            format_func=lambda x: video_concat_modes[x][0],  # 顯示給使用者的是標籤
         )
         params.video_concat_mode = VideoConcatMode(
             video_concat_modes[selected_index][1]
@@ -536,8 +536,8 @@ with middle_panel:
         ]
         selected_index = st.selectbox(
             tr("Video Ratio"),
-            options=range(len(video_aspect_ratios)),  # 使用索引作为内部选项值
-            format_func=lambda x: video_aspect_ratios[x][0],  # 显示给用户的是标签
+            options=range(len(video_aspect_ratios)),  # 使用索引作為內部選項值
+            format_func=lambda x: video_aspect_ratios[x][0],  # 顯示給使用者的是標籤
         )
         params.video_aspect = VideoAspect(video_aspect_ratios[selected_index][1])
 
@@ -649,18 +649,18 @@ with middle_panel:
         selected_index = st.selectbox(
             tr("Background Music"),
             index=1,
-            options=range(len(bgm_options)),  # 使用索引作为内部选项值
-            format_func=lambda x: bgm_options[x][0],  # 显示给用户的是标签
+            options=range(len(bgm_options)),  # 使用索引作為內部選項值
+            format_func=lambda x: bgm_options[x][0],  # 顯示給使用者的是標籤
         )
-        # 获取选择的背景音乐类型
+        # 獲取選擇的背景音樂類型
         params.bgm_type = bgm_options[selected_index][1]
 
-        # 根据选择显示或隐藏组件
+        # 根據選擇顯示或隱藏元件
         if params.bgm_type == "custom":
             custom_bgm_file = st.text_input(tr("Custom Background Music File"))
             if custom_bgm_file and os.path.exists(custom_bgm_file):
                 params.bgm_file = custom_bgm_file
-                # st.write(f":red[已选择自定义背景音乐]：**{custom_bgm_file}**")
+                # st.write(f":red[已選擇自訂背景音樂]：**{custom_bgm_file}**")
         params.bgm_volume = st.selectbox(
             tr("Background Music Volume"),
             options=[0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
