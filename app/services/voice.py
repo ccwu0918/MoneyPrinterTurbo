@@ -1186,10 +1186,10 @@ def _format_text(text: str) -> str:
 
 def create_subtitle(sub_maker: submaker.SubMaker, text: str, subtitle_file: str):
     """
-    优化字幕文件
-    1. 将字幕文件按照标点符号分割成多行
-    2. 逐行匹配字幕文件中的文本
-    3. 生成新的字幕文件
+    優化字幕文件
+    1. 將字幕檔按照標點符號分割成多行
+    2. 逐行匹配字幕檔中的文本
+    3. 生成新的字幕檔
     """
 
     text = _format_text(text)
@@ -1198,7 +1198,7 @@ def create_subtitle(sub_maker: submaker.SubMaker, text: str, subtitle_file: str)
         """
         1
         00:00:00,000 --> 00:00:02,360
-        跑步是一项简单易行的运动
+        跑步是一項簡單易行的運動
         """
         start_t = mktimestamp(start_time).replace(".", ",")
         end_t = mktimestamp(end_time).replace(".", ",")
@@ -1276,7 +1276,7 @@ def create_subtitle(sub_maker: submaker.SubMaker, text: str, subtitle_file: str)
 
 def get_audio_duration(sub_maker: submaker.SubMaker):
     """
-    获取音频时长
+    獲取音訊時長
     """
     if not sub_maker.offset:
         return 0.0
@@ -1305,7 +1305,7 @@ if __name__ == "__main__":
             "zh-CN-YunxiNeural",
         ]
         text = """
-        静夜思是唐代诗人李白创作的一首五言古诗。这首诗描绘了诗人在寂静的夜晚，看到窗前的明月，不禁想起远方的家乡和亲人，表达了他对家乡和亲人的深深思念之情。全诗内容是：“床前明月光，疑是地上霜。举头望明月，低头思故乡。”在这短短的四句诗中，诗人通过“明月”和“思故乡”的意象，巧妙地表达了离乡背井人的孤独与哀愁。首句“床前明月光”设景立意，通过明亮的月光引出诗人的遐想；“疑是地上霜”增添了夜晚的寒冷感，加深了诗人的孤寂之情；“举头望明月”和“低头思故乡”则是情感的升华，展现了诗人内心深处的乡愁和对家的渴望。这首诗简洁明快，情感真挚，是中国古典诗歌中非常著名的一首，也深受后人喜爱和推崇。
+        靜夜思是唐代詩人李白創作的一首五言古詩。這首詩描繪了詩人在寂靜的夜晚，看到窗前的明月，不禁想起遠方的家鄉和親人，表達了他對家鄉和親人的深深思念之情。全詩內容是：“床前明月光，疑是地上霜。舉頭望明月，低頭思故鄉。”在這短短的四句詩中，詩人通過“明月”和“思故鄉”的意象，巧妙地表達了離鄉背井人的孤獨與哀愁。首句“床前明月光”設景立意，通過明亮的月光引出詩人的遐想；“疑是地上霜”增添了夜晚的寒冷感，加深了詩人的孤寂之情；“舉頭望明月”和“低頭思故鄉”則是情感的昇華，展現了詩人內心深處的鄉愁和對家的渴望。這首詩簡潔明快，情感真摯，是中國古典詩歌中非常著名的一首，也深受後人喜愛和推崇。
             """
 
         text = """
@@ -1313,25 +1313,25 @@ if __name__ == "__main__":
         """
 
         text = """
-               预计未来3天深圳冷空气活动频繁，未来两天持续阴天有小雨，出门带好雨具；
-               10-11日持续阴天有小雨，日温差小，气温在13-17℃之间，体感阴凉；
-               12日天气短暂好转，早晚清凉；
+               預計未來3天深圳冷空氣活動頻繁，未來兩天持續陰天有小雨，出門帶好雨具；
+               10-11日持續陰天有小雨，日溫差小，氣溫在13-17℃之間，體感陰涼；
+               12日天氣短暫好轉，早晚清涼；
                    """
 
         text = "[Opening scene: A sunny day in a suburban neighborhood. A young boy named Alex, around 8 years old, is playing in his front yard with his loyal dog, Buddy.]\n\n[Camera zooms in on Alex as he throws a ball for Buddy to fetch. Buddy excitedly runs after it and brings it back to Alex.]\n\nAlex: Good boy, Buddy! You're the best dog ever!\n\n[Buddy barks happily and wags his tail.]\n\n[As Alex and Buddy continue playing, a series of potential dangers loom nearby, such as a stray dog approaching, a ball rolling towards the street, and a suspicious-looking stranger walking by.]\n\nAlex: Uh oh, Buddy, look out!\n\n[Buddy senses the danger and immediately springs into action. He barks loudly at the stray dog, scaring it away. Then, he rushes to retrieve the ball before it reaches the street and gently nudges it back towards Alex. Finally, he stands protectively between Alex and the stranger, growling softly to warn them away.]\n\nAlex: Wow, Buddy, you're like my superhero!\n\n[Just as Alex and Buddy are about to head inside, they hear a loud crash from a nearby construction site. They rush over to investigate and find a pile of rubble blocking the path of a kitten trapped underneath.]\n\nAlex: Oh no, Buddy, we have to help!\n\n[Buddy barks in agreement and together they work to carefully move the rubble aside, allowing the kitten to escape unharmed. The kitten gratefully nuzzles against Buddy, who responds with a friendly lick.]\n\nAlex: We did it, Buddy! We saved the day again!\n\n[As Alex and Buddy walk home together, the sun begins to set, casting a warm glow over the neighborhood.]\n\nAlex: Thanks for always being there to watch over me, Buddy. You're not just my dog, you're my best friend.\n\n[Buddy barks happily and nuzzles against Alex as they disappear into the sunset, ready to face whatever adventures tomorrow may bring.]\n\n[End scene.]"
 
-        text = "大家好，我是乔哥，一个想帮你把信用卡全部还清的家伙！\n今天我们要聊的是信用卡的取现功能。\n你是不是也曾经因为一时的资金紧张，而拿着信用卡到ATM机取现？如果是，那你得好好看看这个视频了。\n现在都2024年了，我以为现在不会再有人用信用卡取现功能了。前几天一个粉丝发来一张图片，取现1万。\n信用卡取现有三个弊端。\n一，信用卡取现功能代价可不小。会先收取一个取现手续费，比如这个粉丝，取现1万，按2.5%收取手续费，收取了250元。\n二，信用卡正常消费有最长56天的免息期，但取现不享受免息期。从取现那一天开始，每天按照万5收取利息，这个粉丝用了11天，收取了55元利息。\n三，频繁的取现行为，银行会认为你资金紧张，会被标记为高风险用户，影响你的综合评分和额度。\n那么，如果你资金紧张了，该怎么办呢？\n乔哥给你支一招，用破思机摩擦信用卡，只需要少量的手续费，而且还可以享受最长56天的免息期。\n最后，如果你对玩卡感兴趣，可以找乔哥领取一本《卡神秘籍》，用卡过程中遇到任何疑惑，也欢迎找乔哥交流。\n别忘了，关注乔哥，回复用卡技巧，免费领取《2024用卡技巧》，让我们一起成为用卡高手！"
+        text = "大家好，我是喬哥，一個想幫你把信用卡全部還清的傢伙！\n今天我們要聊的是信用卡的取現功能。\n你是不是也曾經因為一時的資金緊張，而拿著信用卡到ATM機取現？如果是，那你得好好看看這個視頻了。\n現在都2024年了，我以為現在不會再有人用信用卡取現功能了。前幾天一個粉絲發來一張圖片，取現1萬。\n信用卡取現有三個弊端。\n一，信用卡取現功能代價可不小。會先收取一個取現手續費，比如這個粉絲，取現1萬，按2.5%收取手續費，收取了250元。\n二，信用卡正常消費有最長56天的免息期，但取現不享受免息期。從取現那一天開始，每天按照萬5收取利息，這個粉絲用了11天，收取了55元利息。\n三，頻繁的取現行為，銀行會認為你資金緊張，會被標記為高風險使用者，影響你的綜合評分和額度。\n那麼，如果你資金緊張了，該怎麼辦呢？\n喬哥給你支一招，用破思機摩擦信用卡，只需要少量的手續費，而且還可以享受最長56天的免息期。\n最後，如果你對玩卡感興趣，可以找喬哥領取一本《卡神秘笈》，用卡過程中遇到任何疑惑，也歡迎找喬哥交流。\n別忘了，關注喬哥，回復用卡技巧，免費領取《2024用卡技巧》，讓我們一起成為用卡高手！"
 
         text = """
-        2023全年业绩速览
-公司全年累计实现营业收入1476.94亿元，同比增长19.01%，归母净利润747.34亿元，同比增长19.16%。EPS达到59.49元。第四季度单季，营业收入444.25亿元，同比增长20.26%，环比增长31.86%；归母净利润218.58亿元，同比增长19.33%，环比增长29.37%。这一阶段
-的业绩表现不仅突显了公司的增长动力和盈利能力，也反映出公司在竞争激烈的市场环境中保持了良好的发展势头。
-2023年Q4业绩速览
-第四季度，营业收入贡献主要增长点；销售费用高增致盈利能力承压；税金同比上升27%，扰动净利率表现。
-业绩解读
-利润方面，2023全年贵州茅台，>归母净利润增速为19%，其中营业收入正贡献18%，营业成本正贡献百分之一，管理费用正贡献百分之一点四。(注：归母净利润增速值=营业收入增速+各科目贡献，展示贡献/拖累的前四名科目，且要求贡献值/净利润增速>15%)
+        2023全年業績速覽
+公司全年累計實現營業收入1476.94億元，同比增長19.01%，歸母淨利潤747.34億元，同比增長19.16%。EPS達到59.49元。第四季度單季，營業收入444.25億元，同比增長20.26%，環比增長31.86%；歸母淨利潤218.58億元，同比增長19.33%，環比增長29.37%。這一階段
+的業績表現不僅突顯了公司的增長動力和盈利能力，也反映出公司在競爭激烈的市場環境中保持了良好的發展勢頭。
+2023年Q4業績速覽
+第四季度，營業收入貢獻主要增長點；銷售費用高增致盈利能力承壓；稅金同比上升27%，擾動淨利率表現。
+業績解讀
+利潤方面，2023全年貴州茅臺，>歸母淨利潤增速為19%，其中營業收入正貢獻18%，營業成本正貢獻百分之一，管理費用正貢獻百分之一點四。(注：歸母淨利潤增速值=營業收入增速+各科目貢獻，展示貢獻/拖累的前四名科目，且要求貢獻值/淨利潤增速>15%)
 """
-        text = "静夜思是唐代诗人李白创作的一首五言古诗。这首诗描绘了诗人在寂静的夜晚，看到窗前的明月，不禁想起远方的家乡和亲人"
+        text = "靜夜思是唐代詩人李白創作的一首五言古詩。這首詩描繪了詩人在寂靜的夜晚，看到窗前的明月，不禁想起遠方的家鄉和親人"
 
         text = _format_text(text)
         lines = utils.split_string_by_punctuations(text)
