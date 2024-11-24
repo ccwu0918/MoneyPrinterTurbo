@@ -26,31 +26,31 @@ def get_response(status: int, data: Any = None, message: str = ""):
 
 def to_json(obj):
     try:
-        # 定义一个辅助函数来处理不同类型的对象
+        # 定義一個輔助函數來處理不同類型的物件
         def serialize(o):
-            # 如果对象是可序列化类型，直接返回
+            # 如果物件是可序列化類型，直接返回
             if isinstance(o, (int, float, bool, str)) or o is None:
                 return o
-            # 如果对象是二进制数据，转换为base64编码的字符串
+            # 如果物件是二進位資料，轉換為base64編碼的字串
             elif isinstance(o, bytes):
                 return "*** binary data ***"
-            # 如果对象是字典，递归处理每个键值对
+            # 如果物件是字典，遞迴處理每個鍵值對
             elif isinstance(o, dict):
                 return {k: serialize(v) for k, v in o.items()}
-            # 如果对象是列表或元组，递归处理每个元素
+            # 如果物件是清單或元組，遞迴處理每個元素
             elif isinstance(o, (list, tuple)):
                 return [serialize(item) for item in o]
-            # 如果对象是自定义类型，尝试返回其__dict__属性
+            # 如果物件是自訂類型，嘗試返回其__dict__屬性
             elif hasattr(o, "__dict__"):
                 return serialize(o.__dict__)
-            # 其他情况返回None（或者可以选择抛出异常）
+            # 其他情況返回None（或者可以選擇拋出異常）
             else:
                 return None
 
-        # 使用serialize函数处理输入对象
+        # 使用serialize函數處理輸入物件
         serialized_obj = serialize(obj)
 
-        # 序列化处理后的对象为JSON字符串
+        # 序列化處理後的物件為JSON字串
         return json.dumps(serialized_obj, ensure_ascii=False, indent=4)
     except Exception as e:
         return None
@@ -182,7 +182,7 @@ def split_string_by_punctuations(s):
             next_char = s[i + 1]
 
         if char == "." and previous_char.isdigit() and next_char.isdigit():
-            # 取现1万，按2.5%收取手续费, 2.5 中的 . 不能作为换行标记
+            # 取現1萬，按2.5%收取手續費, 2.5 中的 . 不能作為換行標記
             txt += char
             continue
 
