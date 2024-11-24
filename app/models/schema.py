@@ -86,10 +86,10 @@ class VideoParams(BaseModel):
     """
     {
       "video_subject": "",
-      "video_aspect": "横屏 16:9（西瓜视频）",
-      "voice_name": "女生-晓晓",
+      "video_aspect": "橫屏 16:9（西瓜視頻）",
+      "voice_name": "女生-曉曉",
       "bgm_name": "random",
-      "font_name": "STHeitiMedium 黑体-中",
+      "font_name": "STHeitiMedium 黑體-中",
       "text_color": "#FFFFFF",
       "font_size": 60,
       "stroke_color": "#000000",
@@ -98,15 +98,15 @@ class VideoParams(BaseModel):
     """
 
     video_subject: str
-    video_script: str = ""  # 用于生成视频的脚本
-    video_terms: Optional[str | list] = None  # 用于生成视频的关键词
+    video_script: str = ""  # 用於生成視頻的腳本
+    video_terms: Optional[str | list] = None  # 用於生成視頻的關鍵字
     video_aspect: Optional[VideoAspect] = VideoAspect.portrait.value
     video_concat_mode: Optional[VideoConcatMode] = VideoConcatMode.random.value
     video_clip_duration: Optional[int] = 5
     video_count: Optional[int] = 1
 
     video_source: Optional[str] = "pexels"
-    video_materials: Optional[List[MaterialInfo]] = None  # 用于生成视频的素材
+    video_materials: Optional[List[MaterialInfo]] = None  # 用於生成視頻的素材
 
     video_language: Optional[str] = ""  # auto detect
 
@@ -188,7 +188,7 @@ class VideoTermsParams:
 
     video_subject: Optional[str] = "春天的花海"
     video_script: Optional[str] = (
-        "春天的花海，如诗如画般展现在眼前。万物复苏的季节里，大地披上了一袭绚丽多彩的盛装。金黄的迎春、粉嫩的樱花、洁白的梨花、艳丽的郁金香……"
+        "春天的花海，如詩如畫般展現在眼前。萬物復蘇的季節裡，大地披上了一襲絢麗多彩的盛裝。金黃的迎春、粉嫩的櫻花、潔白的梨花、豔麗的鬱金香……"
     )
     amount: Optional[int] = 5
 
@@ -282,7 +282,7 @@ class VideoScriptResponse(BaseResponse):
                 "status": 200,
                 "message": "success",
                 "data": {
-                    "video_script": "春天的花海，是大自然的一幅美丽画卷。在这个季节里，大地复苏，万物生长，花朵争相绽放，形成了一片五彩斑斓的花海..."
+                    "video_script": "春天的花海，是大自然的一幅美麗畫卷。在這個季節裡，大地復蘇，萬物生長，花朵爭相綻放，形成了一片五彩斑斕的花海..."
                 },
             },
         }
