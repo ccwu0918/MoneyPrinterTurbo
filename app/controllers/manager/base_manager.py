@@ -33,7 +33,7 @@ class TaskManager:
         try:
             with self.lock:
                 self.current_tasks += 1
-            func(*args, **kwargs)  # 在这里调用函数，传递*args和**kwargs
+            func(*args, **kwargs)  # 在這裡調用函數，傳遞*args和**kwargs
         finally:
             self.task_done()
 
