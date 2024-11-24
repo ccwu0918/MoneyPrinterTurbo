@@ -88,7 +88,7 @@ def create(audio_file, subtitle_file: str = ""):
                     is_segmented = True
 
                 seg_end = word.end
-                # 如果包含标点,则断句
+                # 如果包含標點,則斷句
                 seg_text += word.word
 
                 if utils.str_contains_punctuation(word.word):
@@ -246,7 +246,7 @@ def correct(subtitle_file, video_script):
             script_index += 1
             subtitle_index = next_subtitle_index
 
-    # 处理剩余的脚本行
+    # 處理剩餘的腳本行
     while script_index < len(script_lines):
         logger.warning(f"Extra script line: {script_lines[script_index]}")
         if subtitle_index < len(subtitle_items):
