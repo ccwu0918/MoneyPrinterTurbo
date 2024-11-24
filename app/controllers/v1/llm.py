@@ -9,7 +9,7 @@ from app.models.schema import (
 from app.services import llm
 from app.utils import utils
 
-# 认证依赖项
+# 認證依賴項
 # router = new_router(dependencies=[Depends(base.verify_token)])
 router = new_router()
 
