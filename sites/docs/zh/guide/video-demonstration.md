@@ -1,13 +1,13 @@
-## 视频演示 📺
+## 影片示範 📺
 
-### 竖屏 9:16
+### 垂直螢幕 9:16
 
 <table>
 <thead>
 <tr>
-<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji> 《如何增加生活的乐趣》</th>
-<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji> 《金钱的作用》<br>更真实的合成声音</th>
-<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji> 《生命的意义是什么》</th>
+<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji> 《如何增加生活的樂趣》</th>
+<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji> 《金錢的作用》<br>更真實的合成聲音</th>
+<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji> 《生命的意義是什麼》</th>
 </tr>
 </thead>
 <tbody>
@@ -19,13 +19,13 @@
 </tbody>
 </table>
 
-### 横屏 16:9
+### 橫屏 16:9
 
 <table>
 <thead>
 <tr>
-<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji>《生命的意义是什么》</th>
-<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji>《为什么要运动》</th>
+<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji>《生命的意義是什麼》</th>
+<th align="center"><g-emoji class="g-emoji" alias="arrow_forward">▶️</g-emoji>《為什麼要運動》</th>
 </tr>
 </thead>
 <tbody>
